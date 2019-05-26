@@ -22,4 +22,17 @@ export class HeroesService {
         }
     }
 
+    public buscarHeroes(termino:string):Heroe[]{
+        let arrayHeroes : Heroe[] = [];
+        termino = termino.toLocaleLowerCase();
+        
+        for (let heroe of HeroesData.heroes){
+            let nombre = heroe.nombre.toLocaleLowerCase();
+            if (nombre.indexOf(termino) >= 0){
+                arrayHeroes.push(heroe);
+            }
+        }
+        return arrayHeroes;
+    }
+
 }
