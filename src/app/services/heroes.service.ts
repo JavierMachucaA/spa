@@ -28,7 +28,9 @@ export class HeroesService {
         
         for (let heroe of HeroesData.heroes){
             let nombre = heroe.nombre.toLocaleLowerCase();
+            let index = HeroesData.heroes.indexOf(heroe);
             if (nombre.indexOf(termino) >= 0){
+                heroe.idx = index;
                 arrayHeroes.push(heroe);
             }
         }
